@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+# Surrogate training data is regenerable (reactor-agent surrogate build); keep params + metrics.
+reactor_agent/surrogate/data.npz

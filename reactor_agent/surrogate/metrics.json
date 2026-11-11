@@ -1,0 +1,12 @@
+{
+  "n_train": 3200,
+  "n_test": 800,
+  "epochs": 3000,
+  "train_seconds": 8.6,
+  "conversion_MAE": 0.007470333483070135,
+  "conversion_P90_abs_err": 0.0031081230845302343,
+  "T_out_MAE_K": 34.064292907714844,
+  "T_out_P90_abs_err_K": 52.39929962158203,
+  "ignition_classification_accuracy": 0.995,
+  "note": "Largest errors sit on the ignition boundary (tau ~ ignition delay), where conversion jumps from ~0 to ~1."
+}

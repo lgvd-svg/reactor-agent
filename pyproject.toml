@@ -1,0 +1,38 @@
+[project]
+name = "reactor-agent"
+version = "0.1.0"
+description = "LLM agent that designs methane reactors by driving a Cantera simulator, with an independent verifier and a JAX surrogate."
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "cantera>=3.1",
+    "numpy",
+    "pydantic>=2",
+    "openai>=1.40",
+    "python-dotenv",
+    "jax[cpu]",
+    "optax",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+reactor-agent = "reactor_agent.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["reactor_agent*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

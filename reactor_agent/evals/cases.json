@@ -1,0 +1,362 @@
+[
+ {
+  "id": "tau-00",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1420.8846169945873,
+   "P_atm": 2.0,
+   "phi": 1.1292989599556913,
+   "target_conversion": 0.8,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.001688477635770114,
+   "conversion_CH4": 0.8000092121021827,
+   "T_max_K": 2002.4863239074334
+  }
+ },
+ {
+  "id": "tau-01",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1394.0788101707774,
+   "P_atm": 1.0,
+   "phi": 1.187811175818378,
+   "target_conversion": 0.5,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.003983112088009775,
+   "conversion_CH4": 0.50000548795201,
+   "T_max_K": 1716.643811191958
+  }
+ },
+ {
+  "id": "tau-02",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1416.3988956966236,
+   "P_atm": 5.0,
+   "phi": 0.7640568163377729,
+   "target_conversion": 0.95,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.0006951183414754623,
+   "conversion_CH4": 0.9500054900344597,
+   "T_max_K": 2116.7527531040864
+  }
+ },
+ {
+  "id": "tau-03",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1307.6350782634486,
+   "P_atm": 2.0,
+   "phi": 1.163382494424301,
+   "target_conversion": 0.8,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.00650115092272729,
+   "conversion_CH4": 0.8000291838441008,
+   "T_max_K": 1935.4403125873293
+  }
+ },
+ {
+  "id": "tau-04",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1375.3527920282327,
+   "P_atm": 2.0,
+   "phi": 0.9217070994136656,
+   "target_conversion": 0.95,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.002562073053814143,
+   "conversion_CH4": 0.9500469525854789,
+   "T_max_K": 2124.265050438216
+  }
+ },
+ {
+  "id": "tau-05",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1229.533552624672,
+   "P_atm": 1.0,
+   "phi": 0.7319086280520877,
+   "target_conversion": 0.9,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.025376782561495025,
+   "conversion_CH4": 0.9001416055835779,
+   "T_max_K": 1856.1715560675739
+  }
+ },
+ {
+  "id": "tau-06",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1439.6709101974038,
+   "P_atm": 1.0,
+   "phi": 1.0790438700426868,
+   "target_conversion": 0.9,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.0022785142042253863,
+   "conversion_CH4": 0.9000248743529129,
+   "T_max_K": 2113.1227147698096
+  }
+ },
+ {
+  "id": "tau-07",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1274.0840888454538,
+   "P_atm": 1.0,
+   "phi": 1.146560560661099,
+   "target_conversion": 0.95,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.017635587233761206,
+   "conversion_CH4": 0.9500586147428197,
+   "T_max_K": 2109.2286914162523
+  }
+ },
+ {
+  "id": "tau-08",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1422.4342239758166,
+   "P_atm": 5.0,
+   "phi": 0.933360501863517,
+   "target_conversion": 0.5,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.0007076080235004402,
+   "conversion_CH4": 0.5000051647424744,
+   "T_max_K": 1720.4831767445498
+  }
+ },
+ {
+  "id": "tau-09",
+  "spec": {
+   "kind": "min_residence_time",
+   "T_K": 1165.33131802553,
+   "P_atm": 2.0,
+   "phi": 1.0415244766212273,
+   "target_conversion": 0.5,
+   "T_max_K": null
+  },
+  "golden": {
+   "residence_time_s": 0.04054171159298214,
+   "conversion_CH4": 0.5000261674804585,
+   "T_max_K": 1530.1597153889395
+  }
+ },
+ {
+  "id": "pyro-00",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 1.0,
+   "t_end_s": 2.0,
+   "target_conversion": 0.3,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1382.1823358535767,
+   "conversion_CH4": 0.3000000060301985
+  }
+ },
+ {
+  "id": "pyro-01",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 1.0,
+   "t_end_s": 2.0,
+   "target_conversion": 0.2,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1360.9830379486084,
+   "conversion_CH4": 0.20000037899399015
+  }
+ },
+ {
+  "id": "pyro-02",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 1.0,
+   "t_end_s": 2.0,
+   "target_conversion": 0.2,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1360.9830379486084,
+   "conversion_CH4": 0.20000037899399015
+  }
+ },
+ {
+  "id": "pyro-03",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 1.0,
+   "t_end_s": 0.5,
+   "target_conversion": 0.5,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1474.9438524246216,
+   "conversion_CH4": 0.5000001849673008
+  }
+ },
+ {
+  "id": "pyro-04",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 3.0,
+   "t_end_s": 0.5,
+   "target_conversion": 0.1,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1360.1978302001953,
+   "conversion_CH4": 0.10000014497348841
+  }
+ },
+ {
+  "id": "pyro-05",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 1.0,
+   "t_end_s": 0.5,
+   "target_conversion": 0.2,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1414.1427040100098,
+   "conversion_CH4": 0.2000000577866582
+  }
+ },
+ {
+  "id": "pyro-06",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 3.0,
+   "t_end_s": 1.0,
+   "target_conversion": 0.3,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1386.3480806350708,
+   "conversion_CH4": 0.3000011880393001
+  }
+ },
+ {
+  "id": "pyro-07",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 3.0,
+   "t_end_s": 0.5,
+   "target_conversion": 0.1,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1360.1978302001953,
+   "conversion_CH4": 0.10000014497348841
+  }
+ },
+ {
+  "id": "pyro-08",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 1.0,
+   "t_end_s": 1.0,
+   "target_conversion": 0.3,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1408.9827299118042,
+   "conversion_CH4": 0.300000730165048
+  }
+ },
+ {
+  "id": "pyro-09",
+  "spec": {
+   "kind": "min_pyrolysis_temperature",
+   "P_atm": 3.0,
+   "t_end_s": 0.5,
+   "target_conversion": 0.5,
+   "T_max_K": 2000.0
+  },
+  "golden": {
+   "T_K": 1452.5452375411987,
+   "conversion_CH4": 0.5000002762599977
+  }
+ },
+ {
+  "id": "tad-00",
+  "spec": {
+   "kind": "adiabatic_flame_temp",
+   "T_K": 500.0,
+   "P_atm": 20.0,
+   "phi": 0.9099827032241395
+  },
+  "golden": {
+   "T_K": 2302.1548081843393
+  }
+ },
+ {
+  "id": "tad-01",
+  "spec": {
+   "kind": "adiabatic_flame_temp",
+   "T_K": 800.0,
+   "P_atm": 1.0,
+   "phi": 1.1459964031799803
+  },
+  "golden": {
+   "T_K": 2463.687323378453
+  }
+ },
+ {
+  "id": "tad-02",
+  "spec": {
+   "kind": "adiabatic_flame_temp",
+   "T_K": 500.0,
+   "P_atm": 1.0,
+   "phi": 0.7599265619800866
+  },
+  "golden": {
+   "T_K": 2072.2578044535517
+  }
+ },
+ {
+  "id": "tad-03",
+  "spec": {
+   "kind": "adiabatic_flame_temp",
+   "T_K": 800.0,
+   "P_atm": 1.0,
+   "phi": 1.2295395020017108
+  },
+  "golden": {
+   "T_K": 2432.7682616294724
+  }
+ },
+ {
+  "id": "tad-04",
+  "spec": {
+   "kind": "adiabatic_flame_temp",
+   "T_K": 800.0,
+   "P_atm": 5.0,
+   "phi": 1.1641323029010682
+  },
+  "golden": {
+   "T_K": 2503.6569017731626
+  }
+ }
+]
