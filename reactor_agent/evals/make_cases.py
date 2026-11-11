@@ -52,10 +52,12 @@ def make(n_per_type: int = 10, seed: int = 42) -> list[Task]:
     rng = np.random.default_rng(seed)
     tasks: list[Task] = []
     for i in range(n_per_type):
+        # Round so the prompt ("1421 K", "phi 1.129") and the spec carry identical numbers;
+        # near the ignition front a 0.3 K difference changes the answer.
         spec = MinResidenceTime(
-            T_K=float(rng.uniform(1150, 1500)),
+            T_K=float(round(rng.uniform(1150, 1500))),
             P_atm=float(rng.choice([1.0, 2.0, 5.0])),
-            phi=float(rng.uniform(0.7, 1.2)),
+            phi=round(float(rng.uniform(0.7, 1.2)), 3),
             target_conversion=float(rng.choice([0.5, 0.8, 0.9, 0.95])),
         )
         tasks.append(Task(id=f"tau-{i:02d}", spec=spec, golden=golden_min_tau(spec)))
@@ -72,7 +74,7 @@ def make(n_per_type: int = 10, seed: int = 42) -> list[Task]:
     for i in range(max(3, n_per_type // 2)):
         spec = AdiabaticFlameTemp(T_K=float(rng.choice([300.0, 500.0, 800.0])),
                                   P_atm=float(rng.choice([1.0, 5.0, 20.0])),
-                                  phi=float(rng.uniform(0.6, 1.4)))
+                                  phi=round(float(rng.uniform(0.6, 1.4)), 3))
         tasks.append(Task(id=f"tad-{i:02d}", spec=spec, golden=golden_tad(spec)))
     return tasks
 

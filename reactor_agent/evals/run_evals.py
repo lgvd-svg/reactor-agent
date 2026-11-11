@@ -11,15 +11,27 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import time
 from pathlib import Path
 
 from ..agent import LLMClient, run_task
+from ..agent.oracle import OracleLLM
 from ..tasks import Task
 from .make_cases import CASES_PATH
 
 RESULTS_PATH = Path(__file__).with_name("results.json")
 SUMMARY_PATH = Path(__file__).with_name("RESULTS.md")
+OFFLINE_MODELS = {"oracle", "sloppy"}
+
+
+def make_llm(model: str | None = None):
+    """Real client by default; the offline stand-ins are created fresh per task (they hold state)."""
+    name = model or os.getenv("LLM_MODEL", "")
+    if name in OFFLINE_MODELS:
+        return lambda: OracleLLM(name)
+    client = LLMClient(**({"model": model} if model else {}))
+    return lambda: client
 
 
 def _gap(task: Task, run) -> float | None:
@@ -34,18 +46,20 @@ def _gap(task: Task, run) -> float | None:
     return None
 
 
-def main(limit: int | None, include_surrogate: bool, verbose: bool, only: str | None) -> None:
+def main(limit: int | None, include_surrogate: bool, verbose: bool, only: str | None,
+         model: str | None = None) -> None:
     tasks = [Task.model_validate(t) for t in json.loads(CASES_PATH.read_text())]
     if only:
         tasks = [t for t in tasks if t.id.startswith(only)]
     if limit:
         tasks = tasks[:limit]
-    llm = LLMClient()
+    new_llm = make_llm(model)
+    model_name = new_llm().model
     rows = []
     t_start = time.perf_counter()
     for task in tasks:
         print(f"[{task.id}] {task.spec.prompt()[:90]}...")
-        run = run_task(task, llm=llm, include_surrogate=include_surrogate, verbose=verbose)
+        run = run_task(task, llm=new_llm(), include_surrogate=include_surrogate, verbose=verbose)
         gap = _gap(task, run)
         row = {
             "task_id": task.id,
@@ -69,7 +83,7 @@ def main(limit: int | None, include_surrogate: bool, verbose: bool, only: str | 
     false_accepts = sum(1 for r in rows if r["agent_claimed_ok"] and not r["verified"])
     no_answer = sum(1 for r in rows if r["error"])
     summary = {
-        "model": llm.model,
+        "model": model_name,
         "surrogate_enabled": include_surrogate,
         "n": n,
         "verified_success": verified,
@@ -85,7 +99,7 @@ def main(limit: int | None, include_surrogate: bool, verbose: bool, only: str | 
     for r in rows:
         by_kind.setdefault(r["kind"], []).append(r)
     lines = [
-        f"# Eval results — model `{llm.model}`, surrogate {'on' if include_surrogate else 'off'}",
+        f"# Eval results — model `{model_name}`, surrogate {'on' if include_surrogate else 'off'}",
         "",
         f"- Cases: **{n}**",
         f"- Verified success (independent verifier): **{verified}/{n}**",
@@ -93,6 +107,7 @@ def main(limit: int | None, include_surrogate: bool, verbose: bool, only: str | 
         f"- **False accepts** (agent said OK, verifier said no): **{false_accepts}**",
         f"- No answer / errors: {no_answer}",
         f"- Mean tool calls per task: {summary['mean_tool_calls']}",
+        f"- Total runtime: {summary['total_seconds']} s",
         "",
         "| kind | n | verified | claimed | false accepts | median |gap| |",
         "|---|---|---|---|---|---|",
@@ -116,5 +131,7 @@ if __name__ == "__main__":
     p.add_argument("--no-surrogate", action="store_true")
     p.add_argument("--verbose", action="store_true")
     p.add_argument("--only", type=str, default=None, help="task id prefix, e.g. tau, pyro, tad")
+    p.add_argument("--model", type=str, default=None,
+                   help="LLM model name, or 'oracle' / 'sloppy' for the offline stand-ins")
     a = p.parse_args()
-    main(a.limit, not a.no_surrogate, a.verbose, a.only)
+    main(a.limit, not a.no_surrogate, a.verbose, a.only, a.model)

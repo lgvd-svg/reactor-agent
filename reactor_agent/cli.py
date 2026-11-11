@@ -72,11 +72,13 @@ def main(argv: list[str] | None = None) -> int:
 
     t = sub.add_parser("task", help="run a golden case by id")
     t.add_argument("task_id")
+    t.add_argument("--model", help="LLM model, or 'oracle' / 'sloppy' (offline stand-ins)")
     t.add_argument("--no-surrogate", action="store_true")
 
     e = sub.add_parser("evals", help="run the eval suite")
     e.add_argument("--limit", type=int)
     e.add_argument("--only")
+    e.add_argument("--model", help="LLM model, or 'oracle' / 'sloppy' (offline stand-ins)")
     e.add_argument("--no-surrogate", action="store_true")
     e.add_argument("--verbose", action="store_true")
 
@@ -100,14 +102,16 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         task = tasks[args.task_id]
         print(task.spec.prompt())
-        run = run_task(task, include_surrogate=not args.no_surrogate, verbose=True)
+        from .evals.run_evals import make_llm
+
+        run = run_task(task, llm=make_llm(args.model)(), include_surrogate=not args.no_surrogate, verbose=True)
         _print_run(run)
         if task.golden:
             print("\nreference (bisection):", json.dumps(task.golden))
     elif args.cmd == "evals":
         from .evals.run_evals import main as evals_main
 
-        evals_main(args.limit, not args.no_surrogate, args.verbose, args.only)
+        evals_main(args.limit, not args.no_surrogate, args.verbose, args.only, args.model)
     elif args.cmd == "surrogate":
         if args.what == "build":
             from .surrogate.dataset import build

@@ -87,7 +87,22 @@ bisection on the exact simulator:
 Run `reactor-agent evals` to produce `evals/RESULTS.md` with verified success, agent-claimed success,
 **false accepts**, tool calls per task and the gap to the bisection reference.
 
-Results with `codestral-latest` via llm7.io: *pending — see RESULTS.md once the run completes.*
+### Harness validation (offline, no LLM)
+
+Two scripted stand-ins drive the exact same loop, tools and verifier, so the pipeline can be proven
+without network or quota (`--model oracle` / `--model sloppy`):
+
+| agent | verified | claimed success | **false accepts** | mean tool calls | median gap (τ) |
+|---|---|---|---|---|---|
+| `oracle` — brackets by bisection, confirms, copies numbers honestly | **25/25** | 25/25 | **0** | 6.8 | 2.1 % |
+| `sloppy` — submits the first passing design and claims success | 7/25 | 25/25 | **18** | 3.2 | 43 % |
+
+Both agents *claim* success on every task. The verifier accepts the careful one and rejects 18 of the
+sloppy one's answers (all for non-minimality: "85 % of τ still meets the target"). That difference is
+the whole point of having a verifier.
+
+Results with a real LLM (`codestral-latest` via llm7.io, or any OpenAI-compatible model):
+*pending quota — run `reactor-agent evals` with your key and the table lands in RESULTS.md.*
 
 ## Quick start
 

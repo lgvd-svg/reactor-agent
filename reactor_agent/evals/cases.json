@@ -3,160 +3,160 @@
   "id": "tau-00",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1420.8846169945873,
+   "T_K": 1421.0,
    "P_atm": 2.0,
-   "phi": 1.1292989599556913,
+   "phi": 1.129,
    "target_conversion": 0.8,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.001688477635770114,
-   "conversion_CH4": 0.8000092121021827,
-   "T_max_K": 2002.4863239074334
+   "residence_time_s": 0.0016860912973973585,
+   "conversion_CH4": 0.8000091249016705,
+   "T_max_K": 2002.5077524747828
   }
  },
  {
   "id": "tau-01",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1394.0788101707774,
+   "T_K": 1394.0,
    "P_atm": 1.0,
-   "phi": 1.187811175818378,
+   "phi": 1.188,
    "target_conversion": 0.5,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.003983112088009775,
-   "conversion_CH4": 0.50000548795201,
-   "T_max_K": 1716.643811191958
+   "residence_time_s": 0.003987129339655297,
+   "conversion_CH4": 0.5000014067259259,
+   "T_max_K": 1716.6036119927287
   }
  },
  {
   "id": "tau-02",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1416.3988956966236,
+   "T_K": 1416.0,
    "P_atm": 5.0,
-   "phi": 0.7640568163377729,
+   "phi": 0.764,
    "target_conversion": 0.95,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.0006951183414754623,
-   "conversion_CH4": 0.9500054900344597,
-   "T_max_K": 2116.7527531040864
+   "residence_time_s": 0.0006980063994388103,
+   "conversion_CH4": 0.9500320902483606,
+   "T_max_K": 2116.4999110928466
   }
  },
  {
   "id": "tau-03",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1307.6350782634486,
+   "T_K": 1308.0,
    "P_atm": 2.0,
-   "phi": 1.163382494424301,
+   "phi": 1.163,
    "target_conversion": 0.8,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.00650115092272729,
-   "conversion_CH4": 0.8000291838441008,
-   "T_max_K": 1935.4403125873293
+   "residence_time_s": 0.006470660888505388,
+   "conversion_CH4": 0.8000804108749136,
+   "T_max_K": 1935.656333255086
   }
  },
  {
   "id": "tau-04",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1375.3527920282327,
+   "T_K": 1375.0,
    "P_atm": 2.0,
-   "phi": 0.9217070994136656,
+   "phi": 0.922,
    "target_conversion": 0.95,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.002562073053814143,
-   "conversion_CH4": 0.9500469525854789,
-   "T_max_K": 2124.265050438216
+   "residence_time_s": 0.002572942988286323,
+   "conversion_CH4": 0.9500328390820701,
+   "T_max_K": 2124.1179611126
   }
  },
  {
   "id": "tau-05",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1229.533552624672,
+   "T_K": 1230.0,
    "P_atm": 1.0,
-   "phi": 0.7319086280520877,
+   "phi": 0.732,
    "target_conversion": 0.9,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.025376782561495025,
-   "conversion_CH4": 0.9001416055835779,
-   "T_max_K": 1856.1715560675739
+   "residence_time_s": 0.0252147929173267,
+   "conversion_CH4": 0.9000878184881818,
+   "T_max_K": 1856.4743052882209
   }
  },
  {
   "id": "tau-06",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1439.6709101974038,
+   "T_K": 1440.0,
    "P_atm": 1.0,
-   "phi": 1.0790438700426868,
+   "phi": 1.079,
    "target_conversion": 0.9,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.0022785142042253863,
-   "conversion_CH4": 0.9000248743529129,
-   "T_max_K": 2113.1227147698096
+   "residence_time_s": 0.0022702360991448413,
+   "conversion_CH4": 0.9000079191929756,
+   "T_max_K": 2113.3062709182677
   }
  },
  {
   "id": "tau-07",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1274.0840888454538,
+   "T_K": 1274.0,
    "P_atm": 1.0,
-   "phi": 1.146560560661099,
+   "phi": 1.147,
    "target_conversion": 0.95,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.017635587233761206,
-   "conversion_CH4": 0.9500586147428197,
-   "T_max_K": 2109.2286914162523
+   "residence_time_s": 0.01765895343190262,
+   "conversion_CH4": 0.9500863825641239,
+   "T_max_K": 2109.348273490057
   }
  },
  {
   "id": "tau-08",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1422.4342239758166,
+   "T_K": 1422.0,
    "P_atm": 5.0,
-   "phi": 0.933360501863517,
+   "phi": 0.933,
    "target_conversion": 0.5,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.0007076080235004402,
-   "conversion_CH4": 0.5000051647424744,
-   "T_max_K": 1720.4831767445498
+   "residence_time_s": 0.000710735722097576,
+   "conversion_CH4": 0.5000016126320297,
+   "T_max_K": 1720.0744240057495
   }
  },
  {
   "id": "tau-09",
   "spec": {
    "kind": "min_residence_time",
-   "T_K": 1165.33131802553,
+   "T_K": 1165.0,
    "P_atm": 2.0,
-   "phi": 1.0415244766212273,
+   "phi": 1.042,
    "target_conversion": 0.5,
    "T_max_K": null
   },
   "golden": {
-   "residence_time_s": 0.04054171159298214,
-   "conversion_CH4": 0.5000261674804585,
-   "T_max_K": 1530.1597153889395
+   "residence_time_s": 0.04074338293438111,
+   "conversion_CH4": 0.5000108609287033,
+   "T_max_K": 1529.996108337307
   }
  },
  {
@@ -305,10 +305,10 @@
    "kind": "adiabatic_flame_temp",
    "T_K": 500.0,
    "P_atm": 20.0,
-   "phi": 0.9099827032241395
+   "phi": 0.91
   },
   "golden": {
-   "T_K": 2302.1548081843393
+   "T_K": 2302.1772291583407
   }
  },
  {
@@ -317,10 +317,10 @@
    "kind": "adiabatic_flame_temp",
    "T_K": 800.0,
    "P_atm": 1.0,
-   "phi": 1.1459964031799803
+   "phi": 1.146
   },
   "golden": {
-   "T_K": 2463.687323378453
+   "T_K": 2463.686471904598
   }
  },
  {
@@ -329,10 +329,10 @@
    "kind": "adiabatic_flame_temp",
    "T_K": 500.0,
    "P_atm": 1.0,
-   "phi": 0.7599265619800866
+   "phi": 0.76
   },
   "golden": {
-   "T_K": 2072.2578044535517
+   "T_K": 2072.364063931633
   }
  },
  {
@@ -341,10 +341,10 @@
    "kind": "adiabatic_flame_temp",
    "T_K": 800.0,
    "P_atm": 1.0,
-   "phi": 1.2295395020017108
+   "phi": 1.23
   },
   "golden": {
-   "T_K": 2432.7682616294724
+   "T_K": 2432.545762166267
   }
  },
  {
@@ -353,10 +353,10 @@
    "kind": "adiabatic_flame_temp",
    "T_K": 800.0,
    "P_atm": 5.0,
-   "phi": 1.1641323029010682
+   "phi": 1.164
   },
   "golden": {
-   "T_K": 2503.6569017731626
+   "T_K": 2503.7235365752153
   }
  }
 ]
